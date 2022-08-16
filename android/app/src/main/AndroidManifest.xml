@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fancyimpress.flutter_firebase_crud">
+    <!-- <application android:allowBackup="false"> -->
    <application
         android:label="flutter_firebase_crud"
         android:name="${applicationName}"
