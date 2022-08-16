@@ -19,7 +19,7 @@ class _LoginState extends State<Login> {
   var password = TextEditingController();
 
   Future<bool> userExists(username , password) async {
-        return await FirebaseFirestore.instance.collection('users')
+        return await FirebaseFirestore.instance.collection('admin_user')
               .where('username', isEqualTo: username)
               .where('password', isEqualTo: password)
               .get()
@@ -28,9 +28,12 @@ class _LoginState extends State<Login> {
 
 // Login to System
   login() async {
+    final prefs = await SharedPreferences.getInstance();
     bool result = await userExists(username.text.toString(), password.text.toString());
     // ignore: unrelated_type_equality_checks
     if(result == true){
+        await prefs.setString('username', username.text);
+        await prefs.setString('password', password.text);
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => Home()));
     }else{

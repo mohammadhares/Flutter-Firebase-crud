@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 // Input Types
 // ignore: non_constant_identifier_names
@@ -168,4 +169,70 @@ TextButton kTextButton(String label, Function onPressed){
     ),
     onPressed: () => onPressed(),
   );
+}
+
+
+Widget customSlideable(title , subtitle){
+    return Slidable(
+                    // The start action pane is the one at the left or the top side.
+                    startActionPane: ActionPane(
+                      // A motion is a widget used to control how the pane animates.
+                      motion: ScrollMotion(),
+                      
+                      // All actions are defined in the children parameter.
+                      children: [
+                        // A SlidableAction can have an icon and/or a label.
+                        SlidableAction(
+                          onPressed: (context) => {
+                            print('')
+                          },
+                          backgroundColor: Color(0xFFFE4A49),
+                          foregroundColor: Colors.white,
+                          icon: Icons.delete,
+                          label: 'Delete',
+                        ),
+                        SlidableAction(
+                          onPressed: null,
+                          backgroundColor: Color(0xFF21B7CA),
+                          foregroundColor: Colors.white,
+                          icon: Icons.edit,
+                          label: 'Edit',
+                        ),
+                      ],
+                    ),
+
+                    // The end action pane is the one at the right or the bottom side.
+                    endActionPane: const ActionPane(
+                      motion: ScrollMotion(),
+                      children: [
+                        SlidableAction(
+                          // An action can be bigger than the others.
+                          flex: 2,
+                          onPressed: null,
+                          backgroundColor: Color.fromARGB(255, 170, 0, 0),
+                          foregroundColor: Colors.white,
+                          icon: Icons.heart_broken,
+                          label: 'BPM:95',
+                        ),
+                        SlidableAction(
+                          flex: 2,
+                          onPressed: null,
+                          backgroundColor: Color(0xFF0392CF),
+                          foregroundColor: Colors.white,
+                          icon: Icons.history,
+                          label: 'History',
+                        ),
+                      ],
+                    ),
+
+                    // The child of the Slidable is what the user sees when the
+                    // component is not dragged.
+                    child: ListTile(
+                      leading: IconButton(
+                              icon: const Icon(Icons.person_add_alt),
+                              onPressed: () {}),
+                      title: Text(title),
+                      subtitle: Text(subtitle),
+                    ),
+                  );
 }
