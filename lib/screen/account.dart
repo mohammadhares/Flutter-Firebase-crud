@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_crud/element/constant.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -43,7 +44,7 @@ class _AccountState extends State<Account> {
       appBar: AppBar(
         title: Text('My Account'),
         centerTitle: true,
-        backgroundColor: Colors.indigo,
+        backgroundColor: primaryColor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -96,7 +97,7 @@ class _AccountState extends State<Account> {
                   padding: EdgeInsets.fromLTRB(90, 0, 90, 0),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5)),
-                  color: Colors.indigo,
+                  color: primaryColor,
                   child: Text(
                     ' Update  ',
                     style: TextStyle(

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_crud/element/constant.dart';
 import 'package:flutter_firebase_crud/element/custom_elements.dart';
 import 'package:flutter_firebase_crud/screen/home.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -66,7 +67,7 @@ class _LoginState extends State<Login> {
                   'Admin Panel',
                   style: TextStyle(
                     fontSize: 38,
-                    color: Colors.indigo,
+                    color: primaryColor,
                   ),
                 ),
                 SizedBox(
@@ -76,7 +77,7 @@ class _LoginState extends State<Login> {
                   'Health Rate App',
                   style: TextStyle(
                     fontSize: 20,
-                    color: Colors.indigo,
+                    color: primaryColor,
                   ),
                 ),
                 SizedBox(
@@ -86,7 +87,7 @@ class _LoginState extends State<Login> {
                   'System for Criminals',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.indigo,
+                    color: primaryColor,
                   ),
                 ),
                 SizedBox(
@@ -127,7 +128,7 @@ class _LoginState extends State<Login> {
                   padding: EdgeInsets.fromLTRB(60, 15, 60, 15),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30)),
-                  color: Colors.indigo,
+                  color: primaryColor,
                   child: Text(
                     'Sign In',
                     style: TextStyle(

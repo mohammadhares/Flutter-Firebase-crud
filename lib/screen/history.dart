@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_crud/element/constant.dart';
 
 class History extends StatefulWidget {
   String username;
@@ -15,7 +16,9 @@ class _HistoryState extends State<History> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Familty')),
+        title: Text('History'),
+        centerTitle: true,
+        backgroundColor: primaryColor,
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_firebase_crud/element/constant.dart';
 import 'package:flutter_firebase_crud/screen/account.dart';
 import 'package:flutter_firebase_crud/screen/history.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -59,8 +60,9 @@ class _HomeState extends State<Home> {
                 const SizedBox(
                   height: 20,
                 ),
-                ElevatedButton(
-                  child: const Text( 'Update'),
+                RaisedButton(
+                  color: primaryColor,
+                  child: const Text( 'Update', style: TextStyle(color: Colors.white),),
                   onPressed: () async {
                       final uname = name.text;
                       final uuname = username.text;
@@ -104,7 +106,7 @@ class _HomeState extends State<Home> {
                 builder: (context) => Account()));
               })
         ],
-        backgroundColor: Colors.redAccent,
+        backgroundColor: primaryColor,
       ),
       body: StreamBuilder(
         stream: _users.snapshots(),
